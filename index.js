@@ -22,7 +22,6 @@ function addMenuItems(json) {
 }
 
 function showDetails(menuItem) {
-  console.log(menuItem)
   const dishName = document.getElementById('dish-name')
   const dishImage = document.getElementById('dish-image')
   const dishPrice = document.getElementById('dish-price')
@@ -37,20 +36,28 @@ function showDetails(menuItem) {
 function addToCart() {
   const formElement = document.getElementById('cart-form')
   let numberInCartElement = document.getElementById('number-in-cart')
-  console.log('numberInCartElement :', numberInCartElement.innerHtml)
+  // console.log('numberInCartElement :', numberInCartElement.innerHtml)
 
   formElement.addEventListener('submit', event => {
     event.preventDefault()
-    // const numberInCartElement = document.getElementById('number-in-cart')
+    
     const cartAmountElement = document.getElementById('cart-amount')
 
-    console.log('numberInCartElement :', numberInCartElement)
-    console.log('cartAmountElement :', cartAmountElement)
-
-    numberInCartElement.textContent = parseInt(numberInCartElement.innerText) + parseInt(cartAmountElement.value)
     //parseInt()
     // Number()
     // +
+    let cartEmountInt = isNaN(+cartAmountElement.value) ? 0 : +cartAmountElement.value
+    numberInCartElement.textContent = parseInt(numberInCartElement.innerText) + cartEmountInt
+    
+    formElement.reset()
 
   })
 }
+
+cartAmountInputElement
+numberInCartSpanElement
+
+let cartEmountInt = isNaN(+cartAmountInputElement.value) ? 0 : +cartAmountInputElement.value
+
+win 
+loss - лос
